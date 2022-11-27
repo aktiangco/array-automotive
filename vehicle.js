@@ -89,3 +89,47 @@ class Vehicle {
 module.exports = {
     Vehicle
 }
+
+
+// class Car {
+//     constructor(maximumPassengers, passengers, numberOfWheels, fuel, scheduleService, milage) {
+//         this.maximumPassengers = maximumPassengers;
+//         this.passenger = 0;
+//         this.numberOfWheels = 4
+//         this.maximumSpeed = 160;
+//         this.fuel = 10;
+//         this.scheduleService = scheduleService;
+//         this.mileage = mileage;
+       
+
+//     }
+//     // if passenger less than maximumPassengers then availableRoom == true
+//     loadPassenger() {
+//         if (this.passenger > this.maximumPassengers) {
+//             console.log("Seat is Available")
+//         } else {
+//             console.log("Vehicle is Full!")
+//         }
+        
+
+//     }
+
+
+//     // if fuel is greater than 0, the start ==true
+//     start() {
+//         if (this.fuel < 0) {
+//             console.log("Engine Starts!!!")
+//         } else {
+//             console.log("No Fuel, No Go...")
+//         }
+//     }
+
+//     // if mileage is greater than 30000, time for maintenance == true
+//     scheduleService() {
+//         if (This.mileage < 300000){
+//             console.log("Maintenance Needed!!!")
+//             }else {
+//             console.log("keep on Trucking!")
+//         }
+
+// }
