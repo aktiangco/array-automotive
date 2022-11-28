@@ -15,7 +15,7 @@ class Car extends VehicleModule { //The extends keyword is used in class declara
     //num
     loadPassenger(num) {
         if (this.passenger < this.maximumPassengers) {
-            if ((num + this.passenger) <= this.maximumPassengers) { //equation of
+            if ((num + this.passenger) <= this.maximumPassengers) { //equation of invoke "loadPassenger" arguments + "this.Passenger"
                 this.passenger = num;
                 return this.passenger;
             } else {
