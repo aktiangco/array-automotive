@@ -1,8 +1,8 @@
 //this includes the vehicle class as a module
-const VehicleModule = require("./vehicleBaseClass")
+const VehicleModule = require('./vehicle').Vehicle //importing it from vehicle.js line 64
 class Car extends VehicleModule { //The extends keyword is used in class declarations or class expressions to create a class that is a child of another class.
     constructor(make, model, year, color, mileage) {
-        super(make, model, year, color, mileage) //super is link to the parent js this is vehicle.js
+        super(make, model, year, color, mileage) //super calls the Parent Constructor
         this.maximumPassengers = 5;
         this.passenger = 0;
         this.numberOfWheels = 4
@@ -12,13 +12,17 @@ class Car extends VehicleModule { //The extends keyword is used in class declara
       
     }
     // if passenger less than maximumPassengers then availableRoom == true
-    loadPassenger() {
+    //num
+    loadPassenger(num) {
         if (this.passenger < this.maximumPassengers) {
-            return this.availableRoom == true;
-            console.log("Seat is Available")
+            if ((num + this.passenger) <= this.maximumPassengers) { //equation of
+                this.passenger = num;
+                return this.passenger;
+            } else {
+                console.log(this.model + " " + this.make + " not have enough space to take all passengers.");
+            }
         } else {
-            return this.availableRoom == false;
-            console.log("Vehicle is Full!")
+            console.log(this.model + " " + this.make + " is full")
         }
             
 
@@ -26,28 +30,30 @@ class Car extends VehicleModule { //The extends keyword is used in class declara
     // if fuel is greater than 0, the start ==true
     start() {
         if (this.fuel > 0) {
-            return this.started = true;
             console.log("engine started.");
+            return this.started = true
         } else {
-            return this.started = false;
             console.log("no fuel, no go.");
+            return this.started = false;
         }
     }
     // if mileage is greater than 30000, time for maintenance == true
-    scheduleService() {
+    service() {
         if (this.mileage > 300000) {
-            return this.mileage == true;
-            console.log("Maintenance Needed!!!")
+            this.scheduleService == true;
+            return this.scheduleService
         } 
     }
 }
 
 //this shows how to call from this module...
-let v = new VehicleModule.Vehicle("Mecury", "Sedan", "1965", "color", "mileage");
-
-console.log(v.make)
-
+let v = new Car('Mercury', 'Sedan', '1965', 'Silver', '50000');
+// "new Car" has to be the same as your "class Car" in line 3
 
 
+v.loadPassenger(5)
+v.start()
+v.service()
 
+console.log(v)
 
